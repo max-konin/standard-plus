@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require 'wow'
+//= require 'bootstrap'
 //= require_tree .
 
 new WOW().init();

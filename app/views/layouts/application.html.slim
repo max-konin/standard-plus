@@ -6,31 +6,39 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full" data-turbolinks-track='false'
   body
-    header
-      .navbar-inverse.navbar-static-top.without-margin-buttom
-        .container
-          = link_to '/', class: 'navbar-brand'
-            | Стандарт &nbsp;
-            i.fa.fa-plus
-          .collapse.navbar-collapse
-            ul.nav.navbar-nav.navbar-right
+    header.navbar-inverse.navbar-static-top.without-margin-buttom
+      .container
+        = link_to '/', class: 'navbar-brand'
+          | Стандарт &nbsp;
+          i.fa.fa-plus
 
-              a.navbar-brand href='tel:+7 904 471 2432'
-                | +7 904 471 2432
+        nav.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            = active_link_to 'Контакты', contacts_path, wrap_tag: 'li'
+
+          ul.nav.navbar-nav.navbar-right
+
+            a.navbar-brand href='tel:+7 904 471 2432'
+              | +7 904 471 2432
     .custom-page-header.green
       .container
-        h1
-          | «Стандарт Плюс»
-          small
-            | Управляющая компания
+        = yield :header
 
     = yield
 
     footer
       .navbar-inverse
         .container
-          p.text-muted
-            = "\u00A9"
-            = Date.today.year
-            |   УК "Стандарт Плюс"
+          .pull-left
+            p.text-muted
+              = "\u00A9"
+              | &nbsp;
+              = Date.today.year
+              |   УК "Стандарт Плюс"
+          .pull-right
+            p.text-muted
+              | Сайт разработан в &nbsp;
+              a href="http://kerweb.ru"
+                | Kernel Web

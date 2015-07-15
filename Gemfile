@@ -38,6 +38,7 @@ gem 'slim-rails'
 gem 'font-awesome-rails'
 gem 'wow-rails'
 gem "animate-rails"
+gem 'active_link_to'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
