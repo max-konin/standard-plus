@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require 'wow'
 //= require_tree .
+
+new WOW().init();

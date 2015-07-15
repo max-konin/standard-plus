@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title УК "Станодарт+"
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    header
+      .navbar-inverse.navbar-static-top.without-margin-buttom
+        .container
+          = link_to '/', class: 'navbar-brand'
+            | Стандарт &nbsp;
+            i.fa.fa-plus
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+
+              a.navbar-brand href='tel:+7 904 471 2432'
+                | +7 904 471 2432
+    .custom-page-header.green
+      .container
+        h1
+          | «Стандарт Плюс»
+          small
+            | Управляющая компания
+
+    = yield
+
+    footer
+      .navbar-inverse
+        .container
+          p.text-muted
+            = "\u00A9"
+            = Date.today.year
+            |   УК "Стандарт Плюс"
