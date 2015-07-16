@@ -17,4 +17,3 @@
 //= require 'bootstrap'
 //= require_tree .
 
-new WOW().init();
