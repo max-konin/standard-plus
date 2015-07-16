@@ -40,6 +40,17 @@ gem 'wow-rails'
 gem "animate-rails"
 gem 'active_link_to'
 
+group :development do
+  gem 'quiet_assets'
+  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'net-ssh', '~> 2.7.0'
+  gem 'capistrano3-unicorn', :require => false
+  gem 'capistrano-sidekiq'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
