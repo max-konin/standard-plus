@@ -39,6 +39,8 @@ gem 'font-awesome-rails'
 gem 'wow-rails'
 gem "animate-rails"
 gem 'active_link_to'
+gem 'rails_admin'
+gem 'annotate', '~> 2.6.6'
 
 group :development do
   gem 'quiet_assets'

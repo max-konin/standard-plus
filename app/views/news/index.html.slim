@@ -1,0 +1,22 @@
+.container
+  h1 Listing news
+
+  table
+    thead
+      tr
+        th Title
+        th Preview
+        th Text
+        th
+        th
+        th
+
+    tbody
+      - @news.each do |news|
+        tr
+          td = news.title
+          td = news.preview
+          td = news.text
+
+
+

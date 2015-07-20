@@ -1,0 +1,14 @@
+- content_for :header
+  h1
+    | Новости
+
+.container
+  p
+    strong Title:
+    = @news.title
+  p
+    strong Preview:
+    = @news.preview
+  p
+    strong Text:
+    = @news.text

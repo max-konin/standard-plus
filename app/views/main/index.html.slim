@@ -13,28 +13,15 @@
   .col-md-6
     h3 Последние новости:
     .list-group
-      a.list-group-item.wow.bounceInRight href="#"
-        h4
-          | Вот и зима в Сургуту. Суровая и беcпощадная
-          | &nbsp;
-          small 2015-07-04
-        p Ура, все на пляж. Загорать и купаться
-
-      a.list-group-item.wow.bounceInRight href="#" data-wow-delay="200ms"
-        h4
-          | Все на пляж, наконец-то лето!
-          | &nbsp;
-          small 2015-07-04
-        p Пляжа нет, дорог нет, отопления нет. Информация для жильцов: необходимо до 2015-07-05 оплатить счета за коммунальные услуги, а не то выселю
-
-
-      a.list-group-item.wow.bounceInRight href="#" data-wow-delay="300ms"
-        h4
-          | В Сургут пришла весна
-          | &nbsp;
-          small 2015-07-02
-        p Пришла весна, а мы уже и не ждали
-
+      - @news.each do |news|
+        = link_to news, class: 'list-group-item wow bounceInRight'
+          h4
+            = news.title
+            | &nbsp;
+            small = news.created_at.strftime('%F')
+          p
+            = news.preview
+.container
   .col-md-6.wow.slideInLeft
     h3 Оплата жилищно комунальных услуг
     p Оплатить услуги можно:
