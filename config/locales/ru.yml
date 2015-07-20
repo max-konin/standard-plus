@@ -1,0 +1,6 @@
+ru:
+  active_record:
+    attributes:
+      question:
+        author: Имя
+        text: Вопрос

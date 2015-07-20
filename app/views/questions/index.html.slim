@@ -1,0 +1,14 @@
+- content_for :header
+  h1
+    | Вопрос-Ответ
+
+.container
+  - @questions.each do |q|
+    .panel.panel-default
+      .panel-heading
+        = p.text
+      .panel-body
+        | Ответ
+
+
+  = render 'questions/form'
