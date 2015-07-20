@@ -1,14 +1,16 @@
 .custom-page-header
-  height: 200px
-  &.green
-    @include background-image(linear-gradient($green, $light-green))
+  height: 300px
+  background-image: image-url('head.jpg')
+  background-origin: padding-box
+  //&.green
+  //  @include background-image(linear-gradient($green, $light-green))
   h1
     padding-top: 50px
     padding-left: 20px
-    color: #fff
+    //color: #fff
     small
       padding-left: 20px
-      color: #cccccc
+      //color: #cccccc
 
 .navbar.navbar-static-top.without-margin-buttom
   margin-bottom: 0px
