@@ -3,12 +3,39 @@
     | Вопрос-Ответ
 
 .container
-  - @questions.each do |q|
-    .panel.panel-default
-      .panel-heading
-        = p.text
-      .panel-body
-        | Ответ
+  - if flash[:notice]
+    .alert.alert-success
+      = flash[:notice]
+  .media-list.questions
+    - @questions.each do |q|
+      .panel.panel-default
+        .panel-body
+          .media.question
+            .media-left
+              i.fa.fa-question.fa-3x
+            .media-body
+              .h4.media-heading
+                = q.text
+              = q.author
+              | &nbsp
+              = q.created_at
+              - if q.answer.present?
+                .media
+                  .media-left
+                  .media-body
+                    .h4.media-heading Ответ:
+                    = q.answer.text
 
+      /.question
+      /  .body.clearfix
+      /    .bubble
+      /      = q.text
+      /  - if q.answer.present?
+      /    .answer.clearfix
+      /      .bubble
+      /        = q.answer.text
 
+.container
+  .h3
+    | Задать вопрос:
   = render 'questions/form'

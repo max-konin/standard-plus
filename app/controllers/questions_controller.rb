@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @questions = Question.published
     @question  = Question.new
   end
 
@@ -14,18 +14,15 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      format.html { redirect_to questions_path, notice: 'Question was successfully created.' }
-      format.json { render :show, status: :created, location: @question }
+      redirect_to questions_path, notice: 'Ваш вопрос получен!'
     else
-      format.html { render :new }
-      format.json { render json: @question.errors, status: :unprocessable_entity }
+      redirect_to questions_path, error: 'Корректно заполните все поля'
     end
   end
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
+    def question_params
+      params.require(:question).permit :author, :text, :email
     end
 end

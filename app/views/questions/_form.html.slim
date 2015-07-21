@@ -1,19 +1,21 @@
 = form_for @question, html: {class: 'form-horizontal'} do |f|
+
+  - if @question.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
+      ul
+        - @question.errors.full_messages.each do |message|
+          li = message
   .form-group
-    - if @question.errors.any?
-      #error_explanation
-        h2 = "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
-        ul
-          - @question.errors.full_messages.each do |message|
-            li = message
-    .fields
-      .field
-        = f.label :author
-        = f.text_field :author, class: 'form-control'
-      .field
-        = f.label :email
-        = f.text_field :email, type: :email, class: 'form-control'
-      .field
-        = f.label :text
-        = f.text_area :text, class: 'form-control'
-    .actions = f.submit class: 'btn btn-default'
+    .field
+      = f.label :author
+      = f.text_field :author, class: 'form-control'
+    .field
+      = f.label :email
+      = f.text_field :email, type: :email, class: 'form-control'
+    .field
+      = f.label :text
+      = f.text_area :text, class: 'form-control'
+  .form-group.actions
+    = f.submit 'Задать вопрос', class: 'btn btn-default'
+
