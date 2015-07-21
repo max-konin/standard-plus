@@ -8,7 +8,7 @@
       = flash[:notice]
   .media-list.questions
     - @questions.each do |q|
-      .panel.panel-default
+      .panel.panel-default.wow.slideInRight
         .panel-body
           .media.question
             .media-left
@@ -35,7 +35,7 @@
       /      .bubble
       /        = q.answer.text
 
-.container
+.container.wow.slideInLeft
   .h3
     | Задать вопрос:
   = render 'questions/form'
