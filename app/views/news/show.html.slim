@@ -3,12 +3,6 @@
     | Новости
 
 .container
-  p
-    strong Title:
-    = @news.title
-  p
-    strong Preview:
-    = @news.preview
-  p
-    strong Text:
+  h2 = @news.title
+  article
     = @news.text
