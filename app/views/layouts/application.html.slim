@@ -16,13 +16,19 @@ html
 
         nav.collapse.navbar-collapse
           ul.nav.navbar-nav
+            li
+              a О компании
             = active_link_to 'Новости', news_index_path, wrap_tag: 'li'
+            li
+              a Наши услуги
+            li
+              a Пункты приема платежей
             = active_link_to 'Вопрос-Ответ', questions_path, wrap_tag: 'li'
             = active_link_to 'Контакты', contacts_path, wrap_tag: 'li'
           ul.nav.navbar-nav.navbar-right
 
-            a.navbar-brand href='tel:+7 904 471 2432'
-              | +7 904 471 2432
+            a.navbar-brand href='tel:+7(3462)71-24-33'
+              | +7(3462)71-24-33
     .custom-page-header.green
       .container
         = yield :header
