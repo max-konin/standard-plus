@@ -25,13 +25,18 @@ html
               a Пункты приема платежей
             = active_link_to 'Вопрос-Ответ', questions_path, wrap_tag: 'li'
             = active_link_to 'Контакты', contacts_path, wrap_tag: 'li'
-          ul.nav.navbar-nav.navbar-right
 
-            a.navbar-brand href='tel:+7(3462)71-24-33'
-              | +7(3462)71-24-33
     .custom-page-header.green
-      .container
-        = yield :header
+      .container.clearfix
+        h1.pull-left
+          | «Стандарт Плюс»
+          br
+          small
+            | Управляющая компания
+        .h3.pull-right
+          | Круглосуточный телефон:
+          a href='tel:+7(3462)71-24-33'
+            | +7(3462)71-24-33
 
     = yield
 
