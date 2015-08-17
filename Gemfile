@@ -41,6 +41,7 @@ gem "animate-rails"
 gem 'active_link_to'
 gem 'rails_admin'
 gem 'annotate', '~> 2.6.6'
+gem 'haml-rails'
 
 group :development do
   gem 'quiet_assets'
