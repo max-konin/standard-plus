@@ -8,6 +8,7 @@
     %title УК "Стандарт Плюс"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %script{src: "http://maps.api.2gis.ru/2.0/loader.js?pkg=full", 'data-turbolinks-track' => false}
   %body
     .navbar.navbar-inverse.navbar-fixed-top
       .container
@@ -28,12 +29,15 @@
             = active_link_to 'Вопрос-Ответ', questions_path, wrap_tag: 'li'
             = active_link_to 'Контакты', contacts_path, wrap_tag: 'li'
     / /.NAVBAR END
-    -#%section#home.text-center
-    -#  #carousel-example.carousel.slide
-    -#    .carousel-inner
-    -#      .item.active
-    -#        = image_tag '1.jpg'
-    / /.SLIDESHOW END
+
+    - if content_for? :page_header
+      %section#home.head-main-img
+        .container
+          .row.text-center.pad-row
+            .col-md-12
+              %h1
+                = yield :page_header
+
 
     = yield
 
